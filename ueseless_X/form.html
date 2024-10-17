@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <title>Select an Experience</title>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0> 
+        
+        <!-- styles -->
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        
+        <!-- Library script(s) -->
+        <script src="js/libraries/p5.min.js"></script>
+        <script src="js/libraries/p5.sound.min.js"></script>
+        
+        <!-- Includes the p5.collide2D addon library -->
+        <script defer src="js/libraries/p5.collide2d.js"></script>
+        <script src="js/libraries/p5.collide2d.min.js"></script>
+        
+        <!-- My script(s) -->
+        <script src="js/Menu.js"></script>
+        <script src="js/script.js"></script>
+
+        
+    </head>
+    <body>
+        <div>
+            <h2 class="home_button" onclick="location.href='menu.html'">
+                <span class="fun_color";>U</span>SELESS</span>&nbsp;E<span class="fun_color";>X</span>PERIENCE</span>
+            </h2>
+       </div>
+        <div class="acc_form">            
+                <label>Select your first name</label><br>
+                <select id="name-select"></select>
+                <span class="checkbox">
+                    <input type="checkbox" id="last-name" name="last-name" value="name" onchange="switchDisplay(this)">
+                    <label for="last-name">I also have a last name</label>&nbsp;
+                        <label class="fun_color" id="last-name-switch" style="font-size:1.5rem; font-weight:bold; display:none;">Great!</label>
+                </span>
+                <br>
+                <label>Email</label>
+                <div class="email_group">
+                    <input type="text" id="email-user" name="email-user">
+                    <span style="font-size:2rem;">@</span>
+                    <input type="text" id="email-domain" name="email-domain">
+                    <span style="font-size:2rem;">.</span>
+                    <input type="text" id="email-ext" name="email-ext">
+                </div>
+                <label>Birthdate</label><br>
+                <!-- Slider for Date -->
+                <div class="date_slider" id="dateValue" style="text-align: center;"></div>
+                <input type="range" id="dateSlider" class="slider"/><br>
+                <label>Password</label><br>
+                <input type="password" id="password" name="password"><br>
+                <label style="line-height: 1.2rem; font-size: 1rem;">
+                    Your password requires at least 10 characters.<br>
+                    Your password should have at least 1 Capital letter.<br>
+                    Your password must have at least 1 Numeral.<br>
+                    Your password needs at least 1 letter of your email.<br>
+                    Your password can have at least 1 cyrillic character.
+                </label>
+        </div>
+        <div>
+            <button class="primary_btn" onclick="location.href='js/knobs-main/demo/css.html'">Next</button>
+        </div>
+   
+    </body>
+</html>
