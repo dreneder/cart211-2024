@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<HTML lang="en">
+<HEAD>
+    <meta charset="UTF-8">
+    <TITLE>Crunchify - jQuery Knob Example</TITLE>
+    <meta name="description" content="Crunchify - jQuery Knob Example.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css">
+body {
+    background-image:
+        url('https://crunchify.com/bg.png');
+}
+p {
+    width: 70%;
+}
+.knob{color:#66CC66 !important;}
+</style>
+<script type="text/javascript"
+    src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js"></script>
+<script>
+function knobfunction(value1){
+    $('.dial')
+    .val(value1)
+    .trigger('change');
+}
+function knobfunction2(value2){
+    $('.dial2')
+    .val(value2)
+    .trigger('change');
+}
+function knobfunction3(value3){
+    $('.dial3')
+    .val(value3)
+    .trigger('change');
+}
+    $(document).ready(
+            function() {
+                setInterval(function() {
+                    var randomnumber = Math.round(Math.random() * 100);
+                    knobfunction(randomnumber);
+                    var randomnumber2 = Math.round(Math.random() * 100);
+                    knobfunction2(randomnumber2);
+                    var randomnumber3= Math.round(Math.random() * 100);
+                    knobfunction3(randomnumber3);
+                }, 3000);
+            });
+</script>
+</HEAD>
+<BODY>
+    <br>
+        <br><br>
+    <div align="center">
+    <h1>Part of Crunchify Tutorial Series...</h1>
+    </div>
+    <br><br>
+    <div id="show" align="center"></div>
+    <div align="center">
+        <input type="text" class="dial"> &nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" class="dial2">&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" class="dial3"> <br><br><br>
+        <script type="text/javascript">
+        <!--
+            google_ad_client = "ca-pub-4032710958875645";
+            /* Crunchify.Header */
+            google_ad_slot = "7360862032";
+            google_ad_width = 728;
+            google_ad_height = 90;
+        //-->
+        </script>
+        <script type="text/javascript"
+            src="https://pagead2.googlesyndication.com/pagead/show_ads.js">            
+        </script>
+        <br> <br>
+        <div
+            style="font-family: verdana; padding: 10px; border-radius: 10px; border: 3px solid #EE872A; width: 50%; font-size: 12px;">
+            jQuery Knob Example by <a
+                href='https://crunchify.com'>Crunchify</a>. Click <a
+                href='https://crunchify.com/category/java-tutorials/'>here</a>
+            for all Java, Spring MVC, Web Development examples.<br>
+        </div>
+    </div>
+<script>
+    $(".dial").knob({
+                 'change' : function (v) { console.log(v); }
+    });
+    $(".dial2").knob({
+                 'change' : function (v) { console.log(v); }
+    });
+    $(".dial3").knob({
+                 'change' : function (v) { console.log(v); }
+    });
+</script>
+</BODY>
+</HTML>

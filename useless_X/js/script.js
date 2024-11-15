@@ -146,3 +146,5 @@ document.addEventListener("DOMContentLoaded", function() {
     // Add the input event listener for the slider
     dateSlider.addEventListener("input", updateDate);
 });
+
+
