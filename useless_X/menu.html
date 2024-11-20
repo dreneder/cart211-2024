@@ -6,38 +6,46 @@
         <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0> 
         
         <!-- styles -->
-        <link rel="stylesheet" type="text/css" href="css/menu.css" />
-        
-        <!-- Library script(s) -->
-        <script src="js/libraries/p5.min.js"></script>
-        <script src="js/libraries/p5.sound.min.js"></script>
-        
-        <!-- Includes the p5.collide2D addon library -->
-        <script defer src="js/libraries/p5.collide2d.js"></script>
-        <script src="js/libraries/p5.collide2d.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
         
         <!-- My script(s) -->
-        <script src="js/Menu.js"></script>
-        <!-- <script src="js/script.js"></script> -->
-
-
+        <script src="js/script.js"></script>
+        
+        <!-- Scripts by Webflow (draggable) -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+        
+        
         
     </head>
     <body>
         <div>
             <h2 class="home_button" onclick="location.href='index.html'">
-                <!-- <span class="fun_color";>U</span>SELESS</span>&nbsp;E<span class="fun_color";>X</span>PERIENCE</span> -->
+                <span class="fun_color">U</span>SELESS</span>&nbsp;E<span class="fun_color";>X</span>PERIENCE</span>
             </h2>
-       </div>
+        </div>
         <div>
-                <!-- <h4>Switch to the category<br/>you want to explore</h4> -->
+            <h4>Switch to the <span class="fun_color">category</span><br/>you want to explore</h4>
         </div>
-        <div class="slider">
-            <div class="knob"></div>
-
+        <div id="content">
+            <div>
+                <div class="category cat1"><span class="fun_color">Volume Player</span></div>
+                <div class="category cat2"><span class="fun_color">Text Readditor</span></div>
+                <div class="category cat3"><span class="fun_color">Image Cropper</span></div>
+            </div>
         </div>
-   
-
+        <div class="cat_control">
+            <div id="knobBG">
+                <div id="knob">
+                    <div class="knobCircle">
+                    </div>
+                </div>
+            </div>
+            <button class="primary_btn cat_btn">Go</button>
+        </div>        
+        
+        <script src="js/Menu.js"></script>
 
     </body>
 </html>

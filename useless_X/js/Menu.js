@@ -1,56 +1,46 @@
-/**
-* Ok, this is my first attempt to revive my knowledge of P5 and make this
-* using it. Wish me luck! I mean, if you got here was because something worked.
-*/
-
-// "use strict";
-
-
-// let selector;
-// let neutral;
-// let option1;
-// let option2;
-// let option3;
+let content = document.getElementById("content");
+let knob = document.getElementById("knob");
+let maxScroll = content.scrollWidth - content.offsetWidth;
+let progress;
+let catButton = document.querySelector('.cat_btn');
 
 
+let scrollTween = gsap.to(content, {scrollTo: {x: maxScroll}, duration: 5, paused: true});
 
-// function preload() {
-    
-// }
-// function setup() {
-//     createCanvas(width/8*7, height/3*2);
+Draggable.create(knob, {
+  type: "rotation",
+  bounds: {minRotation: 0, maxRotation: 2500},
+  onDrag: function () {
+    progress = normalize(this.rotation, 0, 2500);
+    scrollTween.progress(progress);
 
-// }
-// function display() {
+    if (progress >= 0.01 && progress <= 0.048) {
+        btnEnable = true;
+        btnVolPlay = true;
+        setButtonAction('vol_player.html');
+    } else if (progress >= 0.27 && progress <= 0.31) {
+        btnEnable = true;
+        btnTxtRead = true;
+        setButtonAction('txt_readitor.html');
+    } else if (progress >= 0.70 && progress <= 0.82) {
+        btnEnable = true;
+        btnImgCrop = true;
+        setButtonAction('img_cropper.html');
+    } else {
+        btnEnable = false;
+        btnVolPlay = false;
+        btnTxtRead = false;
+        btnImgCrop = false;
+        setButtonAction(null);
+    }
 
-// }
+}
+});
 
-
-const knob = document.querySelector('.knob');
-
-function calculatorDegree(e) {
-    const x1 = window.innerWidth / 2;
-    const y1 = window.innerHeight / 2;
-    const x2 = e.clietX;
-    const y2 = e.clietY;
-
-    const deltaX = x1 - x2;
-    const deltaY = y1 - y2;
-
-    const rad = Math.atan2(deltaY, deltaX);
-
-    let deg = rad * (180 / Math.PI);
-
-    return deg;
+function normalize(value, min, max) {
+    return (value - min) / (max - min);
 }
 
-knob.addEventListener("mousedown", function () {
-    knob.addEventListener("mousemove", rotate);
-        function rotate(e) {
-            const result = Math.floor(calculatorDegree(e) - 90);
-            knob.style.transform = `rotate(${result}deg)`;
-        }
-        knob.addEventListener("mouseup", function () {
-            knob.removeEventListener("mousemove",rotate);
-        });
-});
+function setButtonAction(url) {
+    catButton.onclick = url ? () => window.location.href = url : null;
+}

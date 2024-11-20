@@ -8,6 +8,12 @@ function getRandomColor() {
    return color;
 }
 
+//cariables for the menus
+let btnEnable = false;
+let btnVolPlay = false;
+let btnTxtRead = false;
+let btnImgCrop = false;
+
 // Execute the colour change as soon as the page loads
 window.onload = function() {
     // Import the style sheets
@@ -40,10 +46,40 @@ window.onload = function() {
                 // Find and modify the button1:hover state
                 if (rules[j].selectorText === '.login_button:hover' ||
                     rules[j].selectorText === '.primary_btn:hover') {
-                    rules[j].style.backgroundColor = '#ffffff'; // Keeping the hover background color white
-                    rules[j].style.color = randomColor; // Change hover text color to random color
-                    rules[j].style.borderColor = randomColor; // Change hover border color to random color
+                        rules[j].style.backgroundColor = '#ffffff'; // Keeping the hover background color white
+                        rules[j].style.color = randomColor; // Change hover text color to random color
+                        rules[j].style.borderColor = randomColor; // Change hover border color to random color
+                    }
+                // Find and modify the knobCircle class
+                if (rules[j].selectorText === '.knobCircle') {
+                            rules[j].style.backgroundColor = randomColor;
                 }
+                // all this is to modify the "Go" button in the menu
+                setInterval(() => {
+                    if (rules[j].selectorText === '.cat_btn') {
+                        if (btnEnable) {
+                            rules[j].style.backgroundColor = randomColor;
+                            rules[j].style.borderColor = randomColor;
+                        }
+                        else {
+                            rules[j].style.backgroundColor = "#707070";
+                            rules[j].style.borderColor = "#707070"; 
+                        }
+                    }
+                    if (rules[j].selectorText === '.cat_btn:hover') {
+                        if (btnEnable) {
+                            rules[j].style.backgroundColor = "#ffffff";
+                            rules[j].style.color = randomColor;
+                            rules[j].style.borderColor = randomColor;
+                        }
+                        else {
+                            rules[j].style.backgroundColor = "#707070";
+                            rules[j].style.borderColor = "#707070"; 
+                            rules[j].style.color = "#ffffff"; 
+                        }
+                    }
+                }, 100);
+
             }
         }
     }
@@ -147,4 +183,9 @@ document.addEventListener("DOMContentLoaded", function() {
     dateSlider.addEventListener("input", updateDate);
 });
 
+//enables the Go button
+
+
+let goBtn = document.getElementById("cat_btn");
+// goBtn.disabled = true;
 
