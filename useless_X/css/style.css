@@ -91,6 +91,15 @@ a {
     color: #EB00FF;
 }
 
+.primary_btn:disabled {
+    scale: 1.2rem;
+    cursor: pointer;
+    background-color: #707070;
+    border-color: #707070;
+    color: #ffffff;
+    opacity: 0.5;
+}
+
 .login_button {
     cursor: pointer;
     background-color: #EB00FF;
@@ -303,3 +312,42 @@ input {
     border-color: #707070;
     color: #ffffff;
 }
+
+
+.login-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    text-align: center;
+    z-index: 1000; /* Ensures it is above other elements */
+}
+
+.login-popup input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 2rem;
+}
+
+.login-popup h3 {
+    padding: 1rem;
+    margin: auto;
+}
+
+.login-popup .primary_btn {
+    width: calc(100% - 20px);
+    margin: 0.5rem;
+}
+
+
+  

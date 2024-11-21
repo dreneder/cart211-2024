@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const currentMonth = today.getMonth();
     const currentDay = today.getDate();
 
-    const startDate = new Date(1, 0, 1); // January 1, year 1
+    const startDate = new Date(50, 0, 1); // January 1, year 1
 
     const totalDays = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
 
@@ -192,3 +192,83 @@ document.addEventListener("DOMContentLoaded", function() {
 
 let goBtn = document.getElementById("cat_btn");
 // goBtn.disabled = true;
+
+
+function validatePassword() {
+    const password = document.getElementById('password').value;
+    const emailUser = document.getElementById('email-user').value;
+    const requirements = document.getElementById('password-requirements');
+    const nextButton = document.getElementById('next-btn');
+
+    const lengthValid = password.length >= 10;
+    const uppercaseValid = /[A-Z]/.test(password);
+    const numeralValid = /\d/.test(password);
+    const emailLetterValid = emailUser.split('').some(char => password.includes(char));
+    const cyrillicValid = /[А-Яа-яЁё]/.test(password); // Optional check
+
+    if (lengthValid && uppercaseValid && numeralValid && emailLetterValid) {
+        let message = '';
+        if (!cyrillicValid) message += '<br>Password can include at least 1 Cyrillic character.';
+        requirements.innerHTML = message;
+        requirements.style.color = "#707070";
+        nextButton.disabled = false;
+    } else {
+        let message = '';
+        if (!lengthValid) message += '<br>Password must have at least 10 characters.';
+        if (!uppercaseValid) message += '<br>Password must include at least 1 uppercase letter.';
+        if (!numeralValid) message += '<br>Password must include at least 1 number.';
+        if (!emailLetterValid) message += '<br>Password must include at least 1 letter from your email.';
+        requirements.innerHTML = message;
+        requirements.style.color = '#707070';
+        nextButton.disabled = true;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('password').addEventListener('input', validatePassword);
+});
+
+function openForm1() {
+    document.getElementById("login_pop_1").style.display = "block";
+  }
+  
+  function closeForm1() {
+    document.getElementById("login_pop_1").style.display = "none";
+  }
+function openForm2() {
+    document.getElementById("login_pop_2").style.display = "block";
+    document.getElementById("login_pop_1").style.display = "none";
+  }
+  
+  function closeForm2() {
+    document.getElementById("login_pop_2").style.display = "none";
+  }
+function openForm3() {
+    document.getElementById("login_pop_3").style.display = "block";
+    document.getElementById("login_pop_1").style.display = "none";
+    document.getElementById("login_pop_2").style.display = "none";
+  }
+  
+  function closeForm3() {
+    document.getElementById("login_pop_3").style.display = "none";
+  }
+function openForm4() {
+    document.getElementById("login_pop_4").style.display = "block";
+    document.getElementById("login_pop_1").style.display = "none";
+    document.getElementById("login_pop_2").style.display = "none";
+    document.getElementById("login_pop_3").style.display = "none";
+  }
+  
+  function closeForm4() {
+    document.getElementById("login_pop_4").style.display = "none";
+  }
+function openForm5() {
+    document.getElementById("login_pop_5").style.display = "block";
+    document.getElementById("login_pop_2").style.display = "none";
+    document.getElementById("login_pop_3").style.display = "none";
+    document.getElementById("login_pop_4").style.display = "none";
+  }
+  
+  function closeForm5() {
+    document.getElementById("login_pop_5").style.display = "none";
+  }

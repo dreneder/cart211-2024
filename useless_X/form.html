@@ -8,19 +8,13 @@
         <!-- styles -->
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         
-        <!-- Library script(s) -->
-        <script src="js/libraries/p5.min.js"></script>
-        <script src="js/libraries/p5.sound.min.js"></script>
-        
-        <!-- Includes the p5.collide2D addon library -->
-        <script defer src="js/libraries/p5.collide2d.js"></script>
-        <script src="js/libraries/p5.collide2d.min.js"></script>
-        
         <!-- My script(s) -->
         <script src="js/Menu.js"></script>
         <script src="js/script.js"></script>
 
-        
+        <script>
+            
+        </script>
     </head>
     <body>
         <div>
@@ -51,16 +45,12 @@
                 <input type="range" id="dateSlider" class="slider"/><br>
                 <label>Password</label><br>
                 <input type="password" id="password" name="password"><br>
-                <label style="line-height: 1.2rem; font-size: 1rem;">
-                    Your password requires at least 10 characters.<br>
-                    Your password should have at least 1 Capital letter.<br>
-                    Your password must have at least 1 Numeral.<br>
-                    Your password needs at least 1 letter of your email.<br>
-                    Your password can have at least 1 cyrillic character.
-                </label>
+                
+                <div id="password-requirements" style="margin-top: 10px; font-size: 1rem;"></div> <!-- Feedback area for requirements -->
         </div>
         <div>
-            <button class="primary_btn" onclick="location.href='menu.html'">Next</button>
+            <button id="next-btn" class="primary_btn" disabled onclick="location.href='menu.html'">Next</button>
+
         </div>
    
     </body>

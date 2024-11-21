@@ -4,6 +4,9 @@
 let rickroll;
 let video;
 
+let volumeSelect;
+
+
 let tiltBox = {
     x: 0,
     y: 0,
@@ -38,6 +41,12 @@ function setup() {
     rickroll.loop();
     rickroll.hide();
     volControl();
+
+    // volumeSelect = createRadio();
+    // volumeSelect.position(width/2,630);
+    // volumeSelect.size(50);
+    // volumeSelect.option('red');
+    // volumeSelect.option('blue');
 }
 
 function draw() {
