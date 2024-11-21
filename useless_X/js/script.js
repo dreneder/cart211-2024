@@ -1,6 +1,6 @@
 // This function generates a new colour to be applied in CSS
 function getRandomColor() {
-   const letters = '0123456789ABCDEF'; // uses only random characters within the HEX range
+   const letters = '0123456789abcdef'; // uses only random characters within the HEX range
    let color = '#';
    for (let i = 0; i < 6; i++) {
        color += letters[Math.floor(Math.random() * 16)];
@@ -14,6 +14,8 @@ let btnVolPlay = false;
 let btnTxtRead = false;
 let btnImgCrop = false;
 
+let expRandomColor;
+
 // Execute the colour change as soon as the page loads
 window.onload = function() {
     // Import the style sheets
@@ -21,10 +23,12 @@ window.onload = function() {
     
     const randomColor = getRandomColor(); // constant that activates the function
     
+    expRandomColor = randomColor;
+
     // Loops each stylesheet
     for (let i = 0; i < styleSheets.length; i++) {
         let rules = styleSheets[i].cssRules; // use 'cssRules'
-        
+    
         // Check if the stylesheet contains rules
         if (rules) {
             // Loop through each rule within the stylesheet
@@ -188,4 +192,3 @@ document.addEventListener("DOMContentLoaded", function() {
 
 let goBtn = document.getElementById("cat_btn");
 // goBtn.disabled = true;
-

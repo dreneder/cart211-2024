@@ -35,6 +35,7 @@ function setup() {
     rickroll = createVideo(['assets/videos/Rick_Astley_Never_Gonna_Give_You_Up.mp4','assets/videos/Rick_Astley_Never_Gonna_Give_You_Up.webm']);
     // rickroll.showControls();
     rickroll.play();
+    rickroll.loop();
     rickroll.hide();
     volControl();
 }
