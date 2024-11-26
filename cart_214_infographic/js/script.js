@@ -61,7 +61,7 @@ function draw() {
   textSize(15);
   text(
     "10,000 is the number of repetitions that forge mastery, for through relentless practice, movement transcends effort, becoming instinct and a reflection of the mind’s harmony with the body.",
-    width / 2 - 250, height - 140, 500
+    width / 2 - 250, height - 120, 500
   );
   translate(width / 2, height / 2);
 
