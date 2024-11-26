@@ -58,10 +58,10 @@ function draw() {
   text("MY JOURNEY TO", width / 2, 40);
   textSize(100);
   text("10000", width / 2, 100);
-  textSize(18);
+  textSize(15);
   text(
     "10,000 is the number of repetitions that forge mastery, for through relentless practice, movement transcends effort, becoming instinct and a reflection of the mind’s harmony with the body.",
-    width / 2 - 250, height - 120, 500
+    width / 2 - 250, height - 140, 500
   );
   translate(width / 2, height / 2);
 
