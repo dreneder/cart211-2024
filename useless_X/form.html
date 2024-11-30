@@ -5,53 +5,63 @@
         <meta charset="utf-8">
         <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0> 
         
-        <!-- styles -->
+        <!-- Link to external styles -->
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         
-        <!-- My script(s) -->
+        <!-- External scripts -->
         <script src="js/Menu.js"></script>
         <script src="js/script.js"></script>
 
         <script>
-            
+            // Custom script area (currently empty)
         </script>
     </head>
     <body>
         <div>
+            <!-- Home button linking to index -->
             <h2 class="home_button" onclick="location.href='index.html'">
                 <span class="fun_color";>U</span>SELESS</span>&nbsp;E<span class="fun_color";>X</span>PERIENCE</span>
             </h2>
        </div>
         <div class="acc_form">            
-                <label>Select your first name</label><br>
-                <select id="name-select"></select>
-                <span class="checkbox">
-                    <input type="checkbox" id="last-name" name="last-name" value="name" onchange="switchDisplay(this)">
-                    <label for="last-name">I also have a last name</label>&nbsp;
-                        <label class="fun_color" id="last-name-switch" style="font-size:1.5rem; font-weight:bold; display:none;">Great!</label>
-                </span>
-                <br>
-                <label>Email</label>
-                <div class="email_group">
-                    <input type="text" id="email-user" name="email-user">
-                    <span style="font-size:2rem;">@</span>
-                    <input type="text" id="email-domain" name="email-domain">
-                    <span style="font-size:2rem;">.</span>
-                    <input type="text" id="email-ext" name="email-ext">
-                </div>
-                <label>Birthdate</label><br>
-                <!-- Slider for Date -->
-                <div class="date_slider" id="dateValue" style="text-align: center;"></div>
-                <input type="range" id="dateSlider" class="slider"/><br>
-                <label>Password</label><br>
-                <input type="password" id="password" name="password"><br>
-                
-                <div id="password-requirements" style="margin-top: 10px; font-size: 1rem;"></div> <!-- Feedback area for requirements -->
+            <!-- User input for first name selection -->
+            <label>Select your first name</label><br>
+            <select id="name-select"></select>
+            
+            <!-- Checkbox to allow for last name input -->
+            <span class="checkbox">
+                <input type="checkbox" id="last-name" name="last-name" value="name" onchange="switchDisplay(this)">
+                <label for="last-name">I also have a last name</label>&nbsp;
+                <label class="fun_color" id="last-name-switch" style="font-size:1.5rem; font-weight:bold; display:none;">Great!</label>
+            </span>
+            <br>
+            
+            <!-- Email input fields -->
+            <label>Email</label>
+            <div class="email_group">
+                <input type="text" id="email-user" name="email-user">
+                <span style="font-size:2rem;">@</span>
+                <input type="text" id="email-domain" name="email-domain">
+                <span style="font-size:2rem;">.</span>
+                <input type="text" id="email-ext" name="email-ext">
+            </div>
+
+            <!-- Birthdate input slider -->
+            <label>Birthdate</label><br>
+            <div class="date_slider" id="dateValue" style="text-align: center;"></div>
+            <input type="range" id="dateSlider" class="slider"/><br>
+
+            <!-- Password input field -->
+            <label>Password</label><br>
+            <input type="password" id="password" name="password"><br>
+            
+            <!-- Password requirements feedback -->
+            <div id="password-requirements" style="margin-top: 10px; font-size: 1rem;"></div>
         </div>
+
+        <!-- Next button to proceed to menu -->
         <div>
             <button id="next-btn" class="primary_btn" disabled onclick="location.href='menu.html'">Next</button>
-
         </div>
-   
     </body>
 </html>

@@ -1,12 +1,14 @@
+/* styling for the html element */
 html {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: auto;
-    height: 100%;   
+    height: 100%;
     width: 100%;
 }
 
+/* base styling for the body */
 body {
     background-color: #ffffff;
     text-align: center;
@@ -16,10 +18,12 @@ body {
     height: 100vh;
 }
 
+/* container for the home page body */
 .home_body {
     align-content: center;
 }
 
+/* styling for the main header */
 h1 {
     text-align: center;
     font-size: 5rem;
@@ -29,26 +33,25 @@ h1 {
     margin-block-end: auto;
 }
 
-h2 {
+/* styling for secondary headers */
+h2, h3, h4 {
     text-align: center;
-    font-size: 1rem;
     font-family: "HelveticaNeue-Bold";
 }
 
+/* styling for h3 element */
 h3 {
-    text-align: center;
     font-size: 1.5rem;
-    font-family: "HelveticaNeue-Bold";
     padding-bottom: 4rem;
 }
 
+/* styling for h4 element */
 h4 {
-    text-align: center;
     font-size: 1.2rem;
-    font-family: "HelveticaNeue-Bold";
     margin: 2rem;
 }
 
+/* styling for home page button */
 .home_button {
     cursor: help;
     padding-top: 0px;
@@ -56,26 +59,27 @@ h4 {
     margin-block-start: 0.8rem;
 }
 
-
+/* remove text underline for links */
 a {
     text-decoration-line: none;
 }
 
-
+/* styling for text colors */
 .colr1 {color:#ffffff;}
 .colr2 {color:#EB00FF;}
 
+/* color for fun text elements */
 .fun_color {
     color: #EB00FF;
 }
 
+/* styling for primary button */
 .primary_btn {
     cursor: pointer;
     background-color: #EB00FF;
     width: 10rem;
     border-width: 0.4rem;
     border-radius: 0.7rem;
-    border-style: solid;
     border-color: #EB00FF;
     color: #ffffff;
     font-size: 1.5rem;
@@ -83,6 +87,8 @@ a {
     padding: 0.8rem;
     margin: 1rem;
 }
+
+/* hover effect for primary button */
 .primary_btn:hover {
     scale: 1.2rem;
     cursor: pointer;
@@ -91,6 +97,7 @@ a {
     color: #EB00FF;
 }
 
+/* disabled state for primary button */
 .primary_btn:disabled {
     scale: 1.2rem;
     cursor: pointer;
@@ -100,19 +107,21 @@ a {
     opacity: 0.5;
 }
 
+/* styling for login button */
 .login_button {
     cursor: pointer;
     background-color: #EB00FF;
     width: 16rem;
     border-width: 0.4rem;
     border-radius: 0.7rem;
-    border-style: solid;
     border-color: #EB00FF;
     color: #ffffff;
     font-size: 2rem;
     font-weight: bold;
     padding: 0.8rem;
 }
+
+/* hover effect for login button */
 .login_button:hover {
     cursor: pointer;
     background-color: #ffffff;
@@ -120,11 +129,13 @@ a {
     color: #EB00FF;
 }
 
+/* styling for paragraph elements */
 p {
     font-weight: medium;
     font-size: 1.2rem;
 }
 
+/* styling for account form */
 .acc_form {
     text-align: left;
     font-size: 1rem;
@@ -132,100 +143,94 @@ p {
     margin-top: 7rem;
 }
 
-.acc_form label{
+/* styling for account form labels */
+.acc_form label {
     font-weight: medium;
     font-size: 1.2rem;
     margin-block-start: auto;
     margin-block-end: 0.5rem;
     line-height: 2rem;
 }
-    
+
+/* styling for input elements */
 input {
     font-size: 1.8rem;
     height: 3rem;
     width: 35rem;
-    appearance: auto;
     color: #707070;
     background-color: #ffffff;
     border-width: 1px;
     border-style: solid;
     border-color: #707070;
-    padding-top: 1px;
-    -webkit-rtl-ordering: logical;
-    cursor: auto;
     margin-bottom: 1.5rem;
 }
 
+/* styling for checkboxes */
 .checkbox {
     display: inline-flex;
     vertical-align: top;
 }
 
+/* styling for checkbox inputs */
 .checkbox input {
     margin: 0px;
     width: 1.5rem;
 }
 
+/* styling for checkbox labels */
 .checkbox label {
     font-size: 0.9rem;
 }
 
+/* styling for date slider */
 .date_slider {
     font-size: 2rem;
     font-weight: bold;
 }
 
+/* styling for date slider input */
 #dateSlider {
     height: 1rem;
-    appearance: none;
     background-color: transparent;
     cursor: progress;
     border: none;
-    -webkit-appearance: none;
-
 }
 
+/* styling for slider track */
 #dateSlider::-webkit-slider-runnable-track {
     background-color: #707070;
     height: 0.3rem;
 }
 
+/* styling for slider thumb */
 #dateSlider::-webkit-slider-thumb {
-    appearance: none;
-    -webkit-appearance: none;
-
     width: 0;
     height: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-bottom: 15px solid #707070;
     margin-top: 0.3rem;
-    /* background-color: #707070; */
 }
 
+/* styling for name select dropdown */
 #name-select {
-    appearance: none;
-    -webkit-appearance: none;
     font-size: 1.8rem;
     height: 3rem;
     width: 20rem;
-    appearance: auto;
     color: #707070;
     background-color: #ffffff;
     border-width: 1px;
-    border-radius: 0px;
     border-style: solid;
     border-color: #707070;
-    padding-top: 1px;
-    -webkit-rtl-ordering: logical;
-    cursor: auto;
     margin-bottom: 1.5rem;
 }
 
+/* styling for email group input */
 .email_group input {
     width: 10.5rem;
 }
 
+/* styling for text read box */
 #textReadBox {
     width: 40rem;
     height: 20rem;
@@ -234,24 +239,30 @@ input {
     color: #707070;
     border-color: #707070;
     outline: none;
-  }
+}
 
-  #knobBG {
+/* styling for knob background */
+#knobBG {
     border: 4px solid #707070;
     border-radius: 50%;
 }
-  #knobBG, #knob {
+
+#knobBG, #knob {
     margin: auto;
     position: relative;
-    width:250px; 
-    height:250px;
-  }
-  #knob {
+    width: 250px;
+    height: 250px;
+}
+
+/* styling for knob element */
+#knob {
     width: 250px;
     height: 250px;
     z-index: 1;
-  }
-  .knobCircle {
+}
+
+/* styling for knob circle */
+.knobCircle {
     position: absolute;
     top: 10%;
     left: 50%;
@@ -261,27 +272,29 @@ input {
     background-color: #EB00FF;
     border-radius: 50%;
 }
-  .category {
-    font-size:3rem;
+
+/* styling for category text */
+.category {
+    font-size: 3rem;
     font-weight: bold;
     padding-left: 10px;
     padding-right: 10px;
-    vertical-align: middle;
-  }
-  #content{
+}
+
+/* container for the content area */
+#content {
     display: flex;
-    /* justify-content: space-evenly; */
     border: #707070 solid 4px;
-    height:300px;
-    width:535px;
+    height: 300px;
+    width: 535px;
     overflow-x: hidden;
     overflow-y: hidden;
     white-space: nowrap;
-    vertical-align:middle;
     margin-bottom: 1rem;
-    
-  }
-  #content .category {
+}
+
+/* styling for individual categories within content */
+#content .category {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -289,12 +302,15 @@ input {
     width: 535px;
     margin: 0 100px;
     box-sizing: border-box;
-  }
+}
 
-  .cat_control {
+/* styling for category control elements */
+.cat_control {
     display: inline-flex;
     vertical-align: middle;
 }
+
+/* styling for category buttons */
 .cat_btn {
     border-color: #707070;
     background-color: #707070;
@@ -306,6 +322,7 @@ input {
     margin-bottom: auto;
 }
 
+/* hover effect for category buttons */
 .cat_btn:hover {
     cursor: pointer;
     background-color: #707070;
@@ -313,7 +330,7 @@ input {
     color: #ffffff;
 }
 
-
+/* styling for login popup */
 .login-popup {
     display: none;
     position: fixed;
@@ -325,29 +342,27 @@ input {
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
-    text-align: center;
-    z-index: 1000; /* Ensures it is above other elements */
+    z-index: 1000;
 }
 
+/* styling for inputs within login popup */
 .login-popup input {
     width: calc(100% - 20px);
     padding: 10px;
-    text-align: center;
     margin-bottom: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 2rem;
 }
 
+/* styling for login popup header */
 .login-popup h3 {
     padding: 1rem;
     margin: auto;
 }
 
+/* styling for primary button inside login popup */
 .login-popup .primary_btn {
     width: calc(100% - 20px);
     margin: 0.5rem;
 }
-
-
-  

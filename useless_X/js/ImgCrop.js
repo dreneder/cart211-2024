@@ -1,13 +1,13 @@
 "use strict";
 
 let shrek;
-let loadedImg;
-let croppedImg;
-let randomColor;
-let maxWidth;
-let maxHeight;
+let loadedImg; // stores the loaded image
+let croppedImg; // stores the cropped image
+let randomColor; // random color value
+let maxWidth; // maximum width for the image
+let maxHeight; // maximum height for the image
 
-// all these variables are crop "from"
+// crop boundaries
 let cropLeft = 0;
 let cropRight = 0;
 let cropUp = 0;
@@ -23,14 +23,14 @@ let imgRight;
 let imgUp;
 let imgDown;
 
-// knobs
+// knob objects
 let knobLeft;
 let knobRight;
 let knobUp;
 let knobDown;
 
 function preload() {
-    shrek = loadImage(`assets/images/shrek.jpg`);
+    shrek = loadImage(`assets/images/shrek.jpg`); // preload the image
 }
 
 function setup() {
@@ -44,24 +44,26 @@ function setup() {
     imgWidth = maxWidth;
     imgHeight = maxHeight;
 
+    // initialize knob controls
     knobLeft = new Knob(width / 6, 540, 60);
     knobRight = new Knob((width / 6) * 5, 540, 60);
     knobUp = new Knob((width / 6) * 2.35, 540, 60);
     knobDown = new Knob((width / 6) * 3.65, 540, 60);
 
-    // set up HTML elements
+    // setup HTML elements for file upload and save
     const uploadButton = select("#uploadButton");
     const fileInput = select("#fileInput");
     const saveButton = select("#saveButton");
 
     uploadButton.mousePressed(() => fileInput.elt.click());
     fileInput.changed(handleFile);
-    
     saveButton.mousePressed(saveCroppedImage);
 }
 
 function draw() {
     background(255);
+
+    // calculate cropping boundaries
     imgLeft = constrain(imgX, 0, imgWidth) + constrain(round(knobLeft.getValue()), 0, imgWidth);
     imgRight = constrain(imgWidth, 0, imgWidth) - constrain(round(knobRight.getValue()), 0, imgWidth);
     imgUp = constrain(imgY, 0, imgHeight) + constrain(round(knobUp.getValue()), 0, imgHeight);
@@ -75,8 +77,8 @@ function draw() {
     stroke(112);
     strokeWeight(5);
     noFill();
-    // rect(imgLeft + 3, imgUp + 5, imgRight, imgDown);
 
+    // draw knobs
     knobLeft.update();
     knobLeft.draw();
 
@@ -89,24 +91,25 @@ function draw() {
     knobDown.update();
     knobDown.draw();
 
+    // crop the image based on knob values
     croppedImg = loadedImg.get(cropLeft, cropUp, cropRight, cropDown);
-
     image(croppedImg, imgLeft + 3, imgUp + 5, imgRight, imgDown);
 }
 
 function importRandomColor() {
     let hexColor = expRandomColor;
-    randomColor = color(hexColor);
+    randomColor = color(hexColor); // convert hex to color
 }
 
 function maxSize() {
-    let imgWidth = 640;
-    let imgHeight = 480;
+    let imgWidth = 640; // max allowed width
+    let imgHeight = 480; // max allowed height
 
     let aspectRatio = loadedImg.width / loadedImg.height;
     maxWidth = loadedImg.width;
     maxHeight = loadedImg.height;
 
+    // adjust dimensions to maintain aspect ratio
     if (maxWidth > imgWidth) {
         maxWidth = imgWidth;
         maxHeight = imgWidth / aspectRatio;
@@ -126,6 +129,7 @@ function retainValues() {
 }
 
 function mousePressed() {
+    // handle knob interaction
     knobLeft.pressed();
     knobRight.pressed();
     knobUp.pressed();
@@ -144,7 +148,7 @@ function handleFile() {
     if (file && file.type.startsWith("image/")) {
         const imgUrl = URL.createObjectURL(file);
         loadedImg = loadImage(imgUrl, () => {
-            maxSize();
+            maxSize(); // adjust image dimensions
         });
     } else {
         console.log("Please upload a valid image.");
@@ -152,5 +156,5 @@ function handleFile() {
 }
 
 function saveCroppedImage() {
-    save(croppedImg, 'croppedImage.png');
+    save(croppedImg, 'croppedImage.png'); // save the cropped image
 }

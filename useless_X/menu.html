@@ -5,37 +5,38 @@
         <meta charset="utf-8">
         <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0> 
         
-        <!-- styles -->
+        <!-- Link to external styles -->
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         
-        <!-- My script(s) -->
+        <!-- Custom script for page functionality -->
         <script src="js/script.js"></script>
         
-        <!-- Scripts by Webflow (draggable) -->
+        <!-- GSAP library for draggable functionality -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
-        
-        
-        
     </head>
     <body>
         <div>
+            <!-- Home button linking to the index page -->
             <h2 class="home_button" onclick="location.href='index.html'">
                 <span class="fun_color">U</span>SELESS</span>&nbsp;E<span class="fun_color";>X</span>PERIENCE</span>
             </h2>
         </div>
         <div>
+            <!-- Heading for category selection -->
             <h4>Switch to the <span class="fun_color">category</span><br/>you want to explore</h4>
         </div>
         <div id="content">
             <div>
+                <!-- Categories to select -->
                 <div class="category cat1"><span class="fun_color">Volume Player</span></div>
                 <div class="category cat2"><span class="fun_color">Text Readditor</span></div>
                 <div class="category cat3"><span class="fun_color">Image Cropper</span></div>
             </div>
         </div>
         <div class="cat_control">
+            <!-- Knob and button to navigate between categories -->
             <div id="knobBG">
                 <div id="knob">
                     <div class="knobCircle">
@@ -45,7 +46,7 @@
             <button class="primary_btn cat_btn">Go</button>
         </div>        
         
+        <!-- Custom menu script -->
         <script src="js/Menu.js"></script>
-
     </body>
 </html>

@@ -1,41 +1,37 @@
-let img;
-let croppedImg;
+let img; // declare variable for the image
+let croppedImg; // declare variable for the cropped image
 
-let cropTest = 1200;
+let cropTest = 1200; // initial crop width value
 
+// preload function to load the image before the setup
 function preload() {
-  // Load your image
-  img = loadImage(`assets/images/shrek_2.jpg`); // Replace with your image path
+  img = loadImage(`assets/images/shrek_2.jpg`); // load the image from assets
 }
 
 function setup() {
-  createCanvas(1200, 675);
-
-
+  createCanvas(1200, 675); // create a canvas with width 1200 and height 675
 }
 
 function draw() {
-  background(200);
+  background(200); // set the background color to light gray
 
-  let cropX = 0;  // X-coordinate of top-left corner
-  let cropY = 0;  // Y-coordinate of top-left corner
-  let cropW = 1200; // Width of the crop area
-  let cropH = 675; // Height of the crop area
+  let cropX = 0;  // x-coordinate of top-left corner for cropping
+  let cropY = 0;  // y-coordinate of top-left corner for cropping
+  let cropW = 1200; // width of the cropping area
+  let cropH = 675; // height of the cropping area
 
-  // Crop the image
+  // crop the image based on the specified coordinates and dimensions
   croppedImg = img.get(cropX, cropY, cropW, cropH);
-    // imageMode(CENTER);
-  // Display the original image
-//   image(img, width/2, height/2, 400, 200);
 
-  // Display the cropped image
+  // display the cropped image on the canvas
   if (croppedImg) {
-    image(croppedImg, 0, 0,cropTest,675); // Position the cropped image
+    image(croppedImg, 0, 0, cropTest, 675); // position the cropped image at (0, 0)
   }
 }
 
-function keyPressed () {
-    if (keyCode === LEFT_ARROW) {
-        cropTest++; 
+// key pressed function to increase the crop width
+function keyPressed() {
+    if (keyCode === LEFT_ARROW) { // if left arrow key is pressed
+        cropTest++; // increase the crop width value by 1
     }
 }

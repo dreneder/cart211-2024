@@ -5,49 +5,42 @@
         <meta charset="utf-8">
         <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0> 
         
-        <!-- styles -->
+        <!-- Link to external styles -->
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         
-        <!-- Library script(s) -->
+        <!-- Library scripts for p5.js functionality -->
         <script src="js/libraries/p5.min.js"></script>
         <script src="js/libraries/p5.sound.min.js"></script>
         
-        <!-- Includes the p5.collide2D addon library -->
+        <!-- Includes p5.collide2D addon library -->
         <script defer src="js/libraries/p5.collide2d.js"></script>
         <script src="js/libraries/p5.collide2d.min.js"></script>
         
-        <!-- My script(s) -->
+        <!-- Custom scripts -->
         <script src="js/script.js"></script>
         <script src="js/P5Knob.js"></script>
         <script src="js/ExpColor.js"></script>
-        
-        
-        
     </head>
     <body>
         <div>
+            <!-- Home button linking to the menu page -->
             <h2 class="home_button" onclick="location.href='menu.html'">
-                <span class="fun_color";>U</span>SELESS</span>&nbsp;E<span class="fun_color";>X</span>PERIENCE</span>
+                <span class="fun_color">U</span>SELESS</span>&nbsp;E<span class="fun_color">X</span>PERIENCE</span>
             </h2>
         </div>
-        <div><span >    
-            <h3 style="padding-bottom: 1rem;">Image <span class="fun_color";>Crop</span>per</h3>
-        </span>
+        <div>
+            <!-- Heading for image cropping functionality -->
+            <h3 style="padding-bottom: 1rem;">Image <span class="fun_color">Crop</span>per</h3>
         </div>
         <div>
-            
-            <!-- script for the page -->
+            <!-- Script for page functionality -->
             <script src="js/ImgCrop.js"></script>
-            
         </div>
         <div>
+            <!-- Upload and save buttons for image manipulation -->
             <button class="primary_btn" id="uploadButton">Upload Image</button>
             <input type="file" id="fileInput" style="display:none;" />
             <button class="primary_btn" id="saveButton">Save Image</button>
-
         </div>
-   
-
-
     </body>
 </html>

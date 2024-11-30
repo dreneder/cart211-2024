@@ -6,61 +6,58 @@
         <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0> 
         
         <link rel="stylesheet" type="text/css" href="css/style.css" />
-
         <script src="js/script.js"></script>
     </head>
     <body class="home_body">
         <div>
             <main>
-            <h1>
-                <span style="letter-spacing:0.6rem;"><span class="fun_color";>U</span>SELESS</span>
-                <br/>
-                <span style="letter-spacing:0.12rem;">E<span class="fun_color";>X</span>PERIENCE</span>
-            </h1>
+                <h1>
+                    <span style="letter-spacing:0.6rem;"><span class="fun_color";>U</span>SELESS</span>
+                    <br/>
+                    <span style="letter-spacing:0.12rem;">E<span class="fun_color";>X</span>PERIENCE</span>
+                </h1>
 
                 <h3>Explore the <span class="fun_color">magic</span> of<br>UX design</h3>
-                <!-- <button class="login_button" onclick="location.href='menu.html'">LOGIN</button> -->
+                <!-- Login button that triggers popup -->
                 <button class="login_button" onclick="openForm1()">LOGIN</button>
                 <p style="font-size: 1rem;">Click <a href="form.html" style="cursor:text;">HERE</a> to create an account</p>
             </main>
-                
         </div>
+        
+        <!-- Login Popup 1 -->
         <div class="login-popup" id="login_pop_1">
             <h3><span class="fun_color">Log</span>in to cont<span class="fun_color">in</span>ue</h3>
             <input type="text" placeholder="Email" name="email" required>
-            
             <input type="password" placeholder="Password" name="psw" required>
-            
             <button type="submit" class="primary_btn" id="login_btn_1" onclick="openForm2()">Login</button>
-            
             <button type="button" class="primary_btn" onclick="closeForm1()">Close</button>
         </div>
+
+        <!-- Login Popup 2 (Account not found) -->
         <div class="login-popup" id="login_pop_2">
             <h3>Your account was not found</h3>
-            
             <button type="submit" class="primary_btn" id="login_btn_2" onclick="openForm3()">Well, I have one!</button>
-            
             <button type="button" class="primary_btn" onclick="openForm5()">Cool I don't have one anyways</button>
         </div>
+
+        <!-- Login Popup 3 (Account confirmation) -->
         <div class="login-popup" id="login_pop_3">
             <h3>No, you don't</h3>
-            
             <button type="submit" class="primary_btn" id="login_btn_3" onclick="openForm4()">Yes, I do!</button>
-            
             <button type="button" class="primary_btn" onclick="openForm5()">Ok, you got me</button>
         </div>
+
+        <!-- Login Popup 4 (Account disbelief) -->
         <div class="login-popup" id="login_pop_4">
             <h3>I don't believe you</h3>
-            
             <button type="submit" class="primary_btn" id="login_btn_4" onclick="openForm5()">Well, I have one!</button>
-            
             <button type="button" class="primary_btn" onclick="openForm5()">Yep, you got me</button>
         </div>
+
+        <!-- Final Popup (Success) -->
         <div class="login-popup" id="login_pop_5">
             <h3>OK, I'll let this one slip, but only this time</h3>
-            
             <button type="submit" class="primary_btn" id="login_btn_5" onclick="location.href='menu.html'">Let's go!</button>
         </div>
-   
     </body>
 </html>

@@ -5,44 +5,40 @@
         <meta charset="utf-8">
         <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0> 
         
-        <!-- styles -->
+        <!-- Link to external styles -->
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         
-        <!-- Library script(s) -->
+        <!-- Library scripts for p5.js and sound handling -->
         <script src="js/libraries/p5.min.js"></script>
         <script src="js/libraries/p5.sound.min.js"></script>
         
-        <!-- Includes the p5.speech library -->
+        <!-- p5.speech library for text-to-speech functionality -->
         <script src="https://cdn.jsdelivr.net/gh/IDMNYU/p5.js-speech@0.0.3/lib/p5.speech.js"></script>
         
-        <!-- Includes the p5.collide2D addon library -->
+        <!-- p5.collide2D addon libraries -->
         <script defer src="js/libraries/p5.collide2d.js"></script>
         <script src="js/libraries/p5.collide2d.min.js"></script>
         
-        <!-- My script(s) -->
+        <!-- Custom scripts for menu and functionality -->
         <script src="js/Menu.js"></script>
         <script src="js/script.js"></script>
-        
-        
-        
     </head>
     <body>
         <div>
+            <!-- Home button linking to menu -->
             <h2 class="home_button" onclick="location.href='menu.html'">
                 <span class="fun_color";>U</span>SELESS</span>&nbsp;E<span class="fun_color";>X</span>PERIENCE</span>
             </h2>
         </div>
         <div>
+            <!-- Page title -->
             <h3>Text <span class="fun_color";>Read</span>ditor</h3>
         </div>
         <div>
+            <!-- Textarea for user input -->
             <textarea id="textReadBox" placeholder="Write something and I will read it for you. I mean, maybe..."></textarea>
-            <!-- script for the page -->
+            <!-- Custom script for text reading functionality -->
             <script src="js/TxtRead.js"></script>
-            
         </div>
-   
-
-
     </body>
 </html>
